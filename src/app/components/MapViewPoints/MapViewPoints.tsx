@@ -10,6 +10,7 @@ import geysersData from '../../../../public/data/points_of_interest/geysers.json
 import hotSpringsData from '../../../../public/data/points_of_interest/hot_springs.json';
 import waterfallsData from '../../../../public/data/points_of_interest/waterfalls.json';
 import anthropogenicData from '../../../../public/data/park2.json';
+import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 
 
 
@@ -95,23 +96,58 @@ const MapView = () => {
   const [showWaterfalls, setShowWaterfalls] = useState<boolean>(false);
   const [showAttractions, setShowAttractions] = useState<boolean>(false);
   const [showHotSprings, setShowHotSprings] = useState<boolean>(false);
-  const [anthropogenicData, setAnthropogenicData] = useState<any[]>([]);
+  const [showAnthropogenic, setShowAnthropogenic] = useState<boolean>(false);
+  const [data, setData] = useState<any>(null);
 
-  const getColor = (indexValue: number) => {
-    if (indexValue >= 0 && indexValue < 20) {
-      return 'darkred';
-    } else if (indexValue >= 20 && indexValue < 40) {
-      return 'red';
-    } else if (indexValue >= 40 && indexValue < 60) {
-      return 'orange';
-    } else if (indexValue >= 60 && indexValue < 80) {
-      return 'yellow';
-    } else if (indexValue >= 80 && indexValue <= 100) {
-      return 'green';
-    } else {
-      return 'gray'; 
-    }
+  useEffect(() => {
+    fetch('/data/park2.json')
+        .then((response) => response.json())
+        .then((data) => setData(data));
+}, []);
+
+const getColor = (indexValue: number) => {
+    if (indexValue < 20) return '#8B0000'; // темно красный
+    if (indexValue < 40) return '#FF0000'; // красный
+    if (indexValue < 60) return '#FFA500'; // оранжевый
+    if (indexValue < 80) return '#FFFF00'; // желтый
+    return '#008000'; // зеленый
+};
+
+const anthropogenicStyle = (feature: any) => {
+  return {
+    fillColor: getColor(feature.properties.index_value),
+    weight: 2,
+    opacity: 1,
+    color: 'white',
+    dashArray: '3',
+    fillOpacity: 0.7,
   };
+};
+
+const handleAnthropogenicVisibilityChange = () => {
+  setShowAnthropogenic(prevShowAnthropogenic => !prevShowAnthropogenic);
+};
+
+useEffect(() => {
+  if (mapRef.current && data) {
+    const geojsonLayer = L.geoJSON(data, { style: anthropogenicStyle });
+
+    if (showAnthropogenic) {
+      geojsonLayer.addTo(mapRef.current);
+    } else {
+      geojsonLayer.remove();
+    }
+
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.removeLayer(geojsonLayer);
+      }
+    };
+  }
+}, [showAnthropogenic, data]);
+
+
+
 
   useEffect(() => {
     delete L.Icon.Default.prototype.options.iconRetinaUrl;
@@ -157,24 +193,6 @@ const MapView = () => {
       }
     };
 
-    const fetchAnthropogenicData = async () => {
-      try {
-        const response = await fetch('/data/park2.json');
-        console.log('fetch')
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
-        }
-        
-        const data = await response.json();
-        console.log(data)
-        setAnthropogenicData(data);
-        console.log('fetch')
-      } catch (error) {
-        console.error('Failed to fetch anthropogenic data:', error);
-      }
-    };
-  
-    fetchAnthropogenicData();
     fetchTerritories();
     fetchTracks();
 
@@ -188,39 +206,7 @@ const MapView = () => {
 
 //Антропогенные данные
 
-  useEffect(() => {
-    if (anthropogenicData.length > 0 && mapRef.current) {
-      markerClusterGroupRef.current?.clearLayers();
   
-      anthropogenicData.forEach((feature: any) => {
-        const { geometry, properties } = feature;
-        const { coordinates } = geometry;
-  
-        if (geometry.type === 'MultiPolygon' && coordinates.length > 0) {
-          coordinates.forEach((polygonCoords: number[][][]) => {
-            const outerCoords = polygonCoords[0];
-            const latLngs: L.LatLngExpression[] = outerCoords.map(([lng, lat]: [number, number]) => [lat, lng]);
-  
-            // Создание полигона
-            const polygon = L.polygon(latLngs, {
-              color: getColor(properties.index_value),
-              fillOpacity: 0.5,
-            });
-  
-            const popupContent = `
-              <div>
-                <h4>${properties.name}</h4>
-                <p>Index Value: ${properties.index_value}</p>
-                <p>Date: ${properties.date}</p>
-              </div>
-            `;
-            polygon.bindPopup(popupContent);
-            markerClusterGroupRef.current?.addLayer(polygon);
-          });
-        }
-      });
-    }
-  }, [anthropogenicData]);
 
   // Территории
   useEffect(() => {
@@ -556,7 +542,7 @@ const MapView = () => {
                 Достопримечательности
               </label>
             </div>
-
+            
             <div>
               <label>
                 <input
@@ -568,8 +554,23 @@ const MapView = () => {
               </label>
             </div>
         </div>
+        <div className={styles.overlay}>
+          <div className={styles.filterBox}>
+            <div className={styles.filterHeading}>Антропогенная нагрузка</div>
+            <label>
+              <input
+                type="checkbox"
+                checked={showAnthropogenic}
+                onChange={handleAnthropogenicVisibilityChange}
+              />
+              Отображать антропогенные данные
+            </label>
+          </div>
+            
+        </div>
       </div>
       <div id="map" className={styles.map}>
+        
       {selectedRoute && (
       <div className={styles.routeInfo}>
         <h3>{selectedRoute.name}</h3>
@@ -579,6 +580,7 @@ const MapView = () => {
       </div>
     )}
       </div>
+        
     </div>
   );
 };
