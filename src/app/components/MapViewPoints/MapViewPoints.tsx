@@ -204,10 +204,6 @@ useEffect(() => {
     };
   }, []); 
 
-//Антропогенные данные
-
-  
-
   // Территории
   useEffect(() => {
     if (territories.length > 0 && mapRef.current) {
@@ -259,23 +255,21 @@ useEffect(() => {
             if (ring && ring.length > 0) {
               const latlngs: LatLngExpression[] = ring.map((coord: number[]) => {
                 if (coord && coord.length === 2) {
-                  // Check if coordinates are within expected ranges
                   const [longitude, latitude] = coord;
                   if (latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
-                    // Swap latitude and longitude if out of range
+
                     console.warn(`Swapping coordinates: [${longitude}, ${latitude}]`);
                     return [latitude, longitude];
                   } else {
                     return [latitude, longitude];
                   }
                 } else {
-                  // console.warn(`Invalid coordinates: ${coord}`);
+
                   return [0, 0];
                 }
               });
         
 
-              // Создание полигона и добавление обработчика клика
               const polygonLayer = L.polygon(latlngs, { color: territoryColor });
               polygonLayer.on('click', (event) => {
                 const popupContent = `
@@ -290,7 +284,7 @@ useEffect(() => {
                   .openOn(mapRef.current!);
               });
 
-              // Добавление полигона в группу кластеров, если территория выбрана
+              
               if (selectedDistricts.includes(name)) {
                 clusterGroup!.addLayer(polygonLayer);
               }
@@ -305,11 +299,18 @@ useEffect(() => {
 
   // Маршруты
   useEffect(() => {
-    mapRef.current.eachLayer((layer) => {
-      if (layer instanceof L.Polyline) {
-        mapRef.current!.removeLayer(layer);
-      }
-    });
+    // Инициализация карты при загрузке компонента
+    if (!mapRef.current) {
+      mapRef.current = L.map('map', {
+        center: [51.505, -0.09], // Лондонские координаты
+        zoom: 10,
+        layers: [
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+          }),
+        ],
+      });
+    }
 
     tracks.forEach((track) => {
       const { data } = track;
