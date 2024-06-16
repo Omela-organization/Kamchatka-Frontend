@@ -1,0 +1,89 @@
+.year, .month, .day {
+    cursor: pointer;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block; 
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    
+}
+  
+.year.selected, .month.selected, .day.selected {
+    font-size: 1.3em;
+    color: var(--color-green);
+}
+
+.year.selected::after, .month.selected::after, .day.selected::after {
+    content: '';
+    position: absolute;
+    bottom: 14px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px; 
+    height: 15px; 
+    background-color: var(--color-light-yellow);
+    border-radius: 50%;
+    z-index: -1;
+
+}
+
+.day:hover {
+    font-size: 1.3em;
+    transition-duration: 0.1s;
+    color: var(--color-green);
+}
+
+.futureDay {
+    color: gray;
+    cursor: not-allowed;
+    font-size: 14px;
+}
+
+.day.selected {
+    color: var(--color-green);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.container_days {
+    display: flex;
+    margin: 20px 0;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.container_years_months, .container_years, .container_months, .container_days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container_years::after, .container_months::after{
+    display: block;
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%; 
+    padding: 0 5px;
+    height: 1px;
+    bottom: 0;
+    background-color: var(--color-light-yellow);
+}
+
+.container_days {
+    height: 40px;
+    transition: 0.5s;
+}
+
+
+  

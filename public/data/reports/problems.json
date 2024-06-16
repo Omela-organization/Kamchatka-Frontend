@@ -1,0 +1,135 @@
+[
+    {
+      "id": 1,
+      "territory_id": 1,
+      "title": "Незаконная вырубка леса",
+      "description": "Замечена вырубка деревьев в заповеднике",
+      "creator_id": 1,
+      "admin_id": 1,
+      "status_id": 1,
+      "created_at": "2024-06-01T10:00:00Z",
+      "updated_at": "2024-06-02T10:00:00Z",
+      "type_incident_id": 1,
+      "photos": ["1", "2"],
+      "classificated_type": {
+        "id": 1,
+        "name": "Незаконная вырубка",
+        "probability": 0.92
+      },
+      "document_id": 1,
+      "is_classificated": true,
+      "longitude": 54.721123,
+      "latitude": 60.123456
+    },
+    {
+      "id": 2,
+      "territory_id": 2,
+      "title": "Мусор вдоль тропы",
+      "description": "Много мусора на тропе к вулкану",
+      "creator_id": 2,
+      "admin_id": 2,
+      "status_id": 2,
+      "created_at": "2024-06-03T11:00:00Z",
+      "updated_at": "2024-06-04T11:00:00Z",
+      "type_incident_id": 2,
+      "photos": ["3", "4"],
+      "classificated_type": {
+        "id": 2,
+        "name": "Мусор",
+        "probability": 0.87
+      },
+      "document_id": 2,
+      "is_classificated": true,
+      "longitude": 53.450123,
+      "latitude": 59.789123
+    },
+    {
+      "id": 3,
+      "territory_id": 3,
+      "title": "Браконьерство",
+      "description": "Замечена охота на охраняемой территории",
+      "creator_id": 3,
+      "admin_id": 3,
+      "status_id": 3,
+      "created_at": "2024-06-05T12:00:00Z",
+      "updated_at": "2024-06-06T12:00:00Z",
+      "type_incident_id": 3,
+      "photos": ["5", "6"],
+      "classificated_type": {
+        "id": 3,
+        "name": "Браконьерство",
+        "probability": 0.95
+      },
+      "document_id": 3,
+      "is_classificated": true,
+      "longitude": 54.987654,
+      "latitude": 60.456789
+    },
+    {
+      "id": 4,
+      "territory_id": 4,
+      "title": "Загрязнение воды",
+      "description": "Слив отходов в реку",
+      "creator_id": 4,
+      "admin_id": 4,
+      "status_id": 1,
+      "created_at": "2024-06-07T13:00:00Z",
+      "updated_at": "2024-06-08T13:00:00Z",
+      "type_incident_id": 4,
+      "photos": ["7", "8"],
+      "classificated_type": {
+        "id": 4,
+        "name": "Загрязнение воды",
+        "probability": 0.89
+      },
+      "document_id": 4,
+      "is_classificated": true,
+      "longitude": 55.123456,
+      "latitude": 61.123456
+    },
+    {
+      "id": 5,
+      "territory_id": 5,
+      "title": "Незаконная охота",
+      "description": "Замечены ловушки для животных",
+      "creator_id": 5,
+      "admin_id": 5,
+      "status_id": 2,
+      "created_at": "2024-06-09T14:00:00Z",
+      "updated_at": "2024-06-10T14:00:00Z",
+      "type_incident_id": 5,
+      "photos": ["9", "10"],
+      "classificated_type": {
+        "id": 5,
+        "name": "Незаконная охота",
+        "probability": 0.91
+      },
+      "document_id": 5,
+      "is_classificated": true,
+      "longitude": 56.234567,
+      "latitude": 61.345678
+    },
+    {
+      "id": 6,
+      "territory_id": 6,
+      "title": "Загрязнение воздуха",
+      "description": "Выбросы вредных веществ в атмосферу",
+      "creator_id": 6,
+      "admin_id": 6,
+      "status_id": 3,
+      "created_at": "2024-06-11T15:00:00Z",
+      "updated_at": "2024-06-12T15:00:00Z",
+      "type_incident_id": 6,
+      "photos": ["11", "12"],
+      "classificated_type": {
+        "id": 6,
+        "name": "Загрязнение воздуха",
+        "probability": 0.93
+      },
+      "document_id": 6,
+      "is_classificated": true,
+      "longitude": 57.345678,
+      "latitude": 61.567890
+    }
+]
+  

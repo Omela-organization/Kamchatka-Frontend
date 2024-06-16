@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@import './leaflet.css';
+
+html, body, #__next, #__next > div {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-dark-green: #1D6438;
+  --color-green: #00A551;
+  --color-light-green-1: #B9EDD0;
+  --color-light-green-2: #E7FFF0;
+  --color-yellow: #F2B600;
+  --color-light-yellow: #FFEFBF;
+  --color-orange: #E77008;
+  --color-red: #D33838;
+  --color-blue: #51BDF6;
+  --color-grey: #A3A3A3;
+  --color-light-grey: #D0D0D0;
+  --color-grey-text: #DBC8B8;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a.active {
+  color: grey;
+  -webkit-text-stroke: 0.1px white;
+  filter: invert(60%) saturate(0%);
+}
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(ul[class]) {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+button {
+padding: 0;
+border: none;
+font: inherit;
+color: inherit;
+background-color: transparent;
+cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,39 @@
+[
+    {
+      "id": "1",
+      "eco_id": 1,
+      "data": "base64data1",
+      "path_to_photo": "uuid1.jpg"
+    },
+    {
+      "id": "2",
+      "eco_id": 1,
+      "data": "base64data2",
+      "path_to_photo": "uuid2.jpg"
+    },
+    {
+      "id": "3",
+      "eco_id": 2,
+      "data": "base64data3",
+      "path_to_photo": "uuid3.jpg"
+    },
+    {
+      "id": "4",
+      "eco_id": 2,
+      "data": "base64data4",
+      "path_to_photo": "uuid4.jpg"
+    },
+    {
+      "id": "5",
+      "eco_id": 3,
+      "data": "base64data5",
+      "path_to_photo": "uuid5.jpg"
+    },
+    {
+      "id": "6",
+      "eco_id": 3,
+      "data": "base64data6",
+      "path_to_photo": "uuid6.jpg"
+    }
+  ]
+  

@@ -1,0 +1,102 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 5px;
+    max-height: 800px;
+    overflow-y: auto;
+  }
+  
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .closeButton {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .visitorsItem {
+    display: flex;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: rgb(244, 244, 244);
+    border-radius: 10px;
+  }
+
+  .visitorId {
+    margin: 0 15px;
+  }
+
+  .content::-webkit-scrollbar {
+    width: 10px; 
+    
+  }
+  
+  .content::-webkit-scrollbar-thumb {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-right: 50px;
+  }
+
+  .confirmButtons_container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .confirmButtons_confirm {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .confirmButtons_confirm:hover, .confirmButtons_cancel:hover {
+    background-color: var(--color-green);
+    color: white;
+  }
+
+  .confirmButtons_cancel {
+    background-color: lightgray;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .approved {
+    background-color: #d4edda;
+  }
+  
+  .rejected {
+    background-color: #f8d7da;
+  }
+  
+  .pending {
+    background-color: #fff;
+  }

@@ -1,0 +1,24 @@
+.marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    border: 2px solid rgba(110, 204, 57, 0.5);
+  }
+  
+  .marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    border: 2px solid rgba(240, 194, 12, 0.5);
+  }
+  
+  .marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    border: 2px solid rgba(241, 128, 23, 0.5);
+  }
+  
