@@ -35,7 +35,7 @@ const MapViewReports: React.FC<MapViewReportsProps> = ({ selectedCoordinates }) 
 
   const defaultPosition = { latitude: 53.2521, longitude: 50.1898 }; 
   return (
-    <MapContainer center={[defaultPosition.latitude, defaultPosition.longitude]} zoom={13} style={{ height: '300px', width: '100%' , zIndex: '0'}}>
+    <MapContainer center={[defaultPosition.latitude, defaultPosition.longitude]} zoom={13} style={{ height: '300px', width: '100%' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

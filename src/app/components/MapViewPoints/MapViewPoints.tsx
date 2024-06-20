@@ -100,9 +100,11 @@ const MapView = () => {
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     fetch('/data/park2.json')
         .then((response) => response.json())
         .then((data) => setData(data));
+    }
 }, []);
 
 const getColor = (indexValue: number) => {
@@ -129,7 +131,7 @@ const handleAnthropogenicVisibilityChange = () => {
 };
 
 useEffect(() => {
-  if (mapRef.current && data) {
+  if (typeof window !== 'undefined' && mapRef.current && data) {
     const geojsonLayer = L.geoJSON(data, { style: anthropogenicStyle });
 
     if (showAnthropogenic) {
@@ -150,6 +152,7 @@ useEffect(() => {
 
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     delete L.Icon.Default.prototype.options.iconRetinaUrl;
     delete L.Icon.Default.prototype.options.iconUrl;
     delete L.Icon.Default.prototype.options.shadowUrl;
@@ -166,6 +169,7 @@ useEffect(() => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(mapRef.current);
     }
+  }
 
     const fetchTerritories = async () => {
       try {
@@ -264,8 +268,8 @@ useEffect(() => {
                     return [latitude, longitude];
                   }
                 } else {
-
-                  return [0, 0];
+                  throw new Error('Expected ring to have 2 elements');
+                  // return [0, 0];
                 }
               });
         
@@ -299,6 +303,7 @@ useEffect(() => {
 
   // Маршруты
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     // Инициализация карты при загрузке компонента
     if (!mapRef.current) {
       mapRef.current = L.map('map', {
@@ -310,6 +315,7 @@ useEffect(() => {
           }),
         ],
       });
+      }
     }
 
     tracks.forEach((track) => {
@@ -371,6 +377,7 @@ useEffect(() => {
   
 //Природные обьекты
   useEffect(() => {
+    
     if (!mapRef.current) {
       mapRef.current = L.map('map').setView([56.5, 160.0], 7);
 

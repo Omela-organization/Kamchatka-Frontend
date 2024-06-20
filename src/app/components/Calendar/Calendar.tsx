@@ -14,14 +14,21 @@ const getInitialDate = () => {
   const currentMonth = today.getMonth();
   const currentDate = today.getDate();
 
-  const savedYear = localStorage.getItem('selectedYear');
-  const savedMonthIndex = localStorage.getItem('selectedMonthIndex');
-  const savedDate = localStorage.getItem('selectedDate');
+  if (typeof window !== 'undefined') {
+    const savedYear = localStorage.getItem('selectedYear');
+    const savedMonthIndex = localStorage.getItem('selectedMonthIndex');
+    const savedDate = localStorage.getItem('selectedDate');
 
+    return {
+      year: savedYear ? parseInt(savedYear, 10) : currentYear,
+      monthIndex: savedMonthIndex ? parseInt(savedMonthIndex, 10) : currentMonth,
+      date: savedDate || `${currentMonth + 1}/${currentDate}`
+    };
+  }
   return {
-    year: savedYear ? parseInt(savedYear, 10) : currentYear,
-    monthIndex: savedMonthIndex ? parseInt(savedMonthIndex, 10) : currentMonth,
-    date: savedDate || `${currentMonth + 1}/${currentDate}`
+    year: currentYear,
+    monthIndex: currentMonth,
+    date: `${currentMonth + 1}/${currentDate}`
   };
 };
 
@@ -38,9 +45,11 @@ const Calendar: React.FC<CalendarProps> = ({ years, months, monthData }) => {
   const todayDate = today.getDate();
 
   useEffect(() => {
-    localStorage.setItem('selectedYear', selectedYear.toString());
-    localStorage.setItem('selectedMonthIndex', selectedMonthIndex.toString());
-    localStorage.setItem('selectedDate', selectedDate);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('selectedYear', selectedYear.toString());
+      localStorage.setItem('selectedMonthIndex', selectedMonthIndex.toString());
+      localStorage.setItem('selectedDate', selectedDate);
+    }
   }, [selectedYear, selectedMonthIndex, selectedDate]);
 
   const handleYearClick = (year: number) => {
