@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "filename": "document1.pdf",
+      "path_to_file": "docs/document1.pdf"
+    },
+    {
+      "id": 2,
+      "filename": "document2.pdf",
+      "path_to_file": "docs/document2.pdf"
+    },
+    {
+      "id": 3,
+      "filename": "document3.pdf",
+      "path_to_file": "docs/document3.pdf"
+    },
+    {
+      "id": 4,
+      "filename": "document4.pdf",
+      "path_to_file": "docs/document4.pdf"
+    },
+    {
+      "id": 5,
+      "filename": "document5.pdf",
+      "path_to_file": "docs/document5.pdf"
+    },
+    {
+      "id": 6,
+      "filename": "document6.pdf",
+      "path_to_file": "docs/document6.pdf"
+    }
+  ]
+  

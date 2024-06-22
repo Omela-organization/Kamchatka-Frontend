@@ -1,0 +1,251 @@
+[
+    {
+      "id": 1,
+      "creator_id": 1,
+      "admin_id": 1,
+      "territory_id": 1,
+      "track_id": 1,
+      "start_date": "2024-06-01",
+      "end_date": "2024-06-07",
+      "visitors": [
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        },
+        {
+          "surname": "Петров",
+          "name": "Петр",
+          "patronymic": "Петрович",
+          "birthday": "1985-05-15",
+          "citizenship": "Россия",
+          "registration_region": "Ленинградская область",
+          "gender": "М",
+          "passport": "0987654321",
+          "email": "petr.petrov@example.com",
+          "phone": "+79998765432",
+          "purpose_visit": "Туризм",
+          "car_plate": "Б456ГД"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "creator_id": 2,
+      "admin_id": 2,
+      "territory_id": 2,
+      "track_id": 2,
+      "start_date": "2024-06-08",
+      "end_date": "2024-06-14",
+      "visitors": [
+        {
+          "surname": "Сидоров",
+          "name": "Сидор",
+          "patronymic": "Сидорович",
+          "birthday": "1992-02-02",
+          "citizenship": "Россия",
+          "registration_region": "Новосибирская область",
+          "gender": "М",
+          "passport": "1122334455",
+          "email": "sidor.sidorov@example.com",
+          "phone": "+79993456789",
+          "purpose_visit": "Исследование",
+          "car_plate": "В789ДЕ"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "creator_id": 3,
+      "admin_id": 3,
+      "territory_id": 3,
+      "track_id": 3,
+      "start_date": "2024-06-15",
+      "end_date": "2024-06-21",
+      "visitors": [
+        {
+          "surname": "Кузнецов",
+          "name": "Кузьма",
+          "patronymic": "Кузьмич",
+          "birthday": "1988-03-03",
+          "citizenship": "Россия",
+          "registration_region": "Томская область",
+          "gender": "М",
+          "passport": "2233445566",
+          "email": "kuzma.kuznetsov@example.com",
+          "phone": "+79992345678",
+          "purpose_visit": "Фотосъемка",
+          "car_plate": "Г890ЕК"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "creator_id": 4,
+      "admin_id": 4,
+      "territory_id": 4,
+      "track_id": 4,
+      "start_date": "2024-06-22",
+      "end_date": "2024-06-28",
+      "visitors": [
+        {
+          "surname": "Михайлов",
+          "name": "Михаил",
+          "patronymic": "Михайлович",
+          "birthday": "1995-04-04",
+          "citizenship": "Россия",
+          "registration_region": "Краснодарский край",
+          "gender": "М",
+          "passport": "3344556677",
+          "email": "mikhail.mikhailov@example.com",
+          "phone": "+79991235678",
+          "purpose_visit": "Исследование",
+          "car_plate": "Д901ЖЗ"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "creator_id": 5,
+      "admin_id": 5,
+      "territory_id": 5,
+      "track_id": 5,
+      "start_date": "2024-06-29",
+      "end_date": "2024-07-05",
+      "visitors": [
+        {
+          "surname": "Фёдоров",
+          "name": "Фёдор",
+          "patronymic": "Фёдорович",
+          "birthday": "1980-05-05",
+          "citizenship": "Россия",
+          "registration_region": "Свердловская область",
+          "gender": "М",
+          "passport": "4455667788",
+          "email": "fedor.fedorov@example.com",
+          "phone": "+79993456789",
+          "purpose_visit": "Туризм",
+          "car_plate": "Е234ЖК"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        },
+        {
+          "surname": "Иванов",
+          "name": "Иван",
+          "patronymic": "Иванович",
+          "birthday": "1990-01-01",
+          "citizenship": "Россия",
+          "registration_region": "Московская область",
+          "gender": "М",
+          "passport": "1234567890",
+          "email": "ivan.ivanov@example.com",
+          "phone": "+79991234567",
+          "purpose_visit": "Туризм",
+          "car_plate": "А123БВ"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "creator_id": 6,
+      "admin_id": 6,
+      "territory_id": 6,
+      "track_id": 6,
+      "start_date": "2024-07-06",
+      "end_date": "2024-07-12",
+      "visitors": [
+        {
+          "surname": "Васильев",
+          "name": "Василий",
+          "patronymic": "Васильевич",
+          "birthday": "1998-06-06",
+          "citizenship": "Россия",
+          "registration_region": "Приморский край",
+          "gender": "М",
+          "passport": "5566778899",
+          "email": "vasiliy.vasiliev@example.com",
+          "phone": "+79992345678",
+          "purpose_visit": "Фотосъемка",
+          "car_plate": "Ж345КЛ"
+        }
+      ]
+    }
+  ]
+  
