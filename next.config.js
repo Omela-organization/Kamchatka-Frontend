@@ -1,6 +1,12 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 module.exports = {
+  basePath: '/Kamchatka-frontend',
+  assetPrefix: '/Kamchatka-frontend/',
+  plugins: {
+    'postcss-import': {},
+    autoprefixer: {},
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.alias['@types/node'] = '@types/node';
@@ -11,7 +17,7 @@ module.exports = {
     });
     return config;
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/repository-name' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/Kamchatka-frontend' : '',
 
   async generateBuildId() {
     return 'build-id';
