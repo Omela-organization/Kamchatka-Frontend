@@ -11,7 +11,7 @@ import hotSpringsData from '../../../../public/data/points_of_interest/hot_sprin
 import waterfallsData from '../../../../public/data/points_of_interest/waterfalls.json';
 import anthropogenicData from '../../../../public/data/park2.json';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-
+import dynamic from 'next/dynamic';
 
 
 interface Territory {
@@ -268,7 +268,7 @@ useEffect(() => {
                     return [latitude, longitude];
                   }
                 } else {
-                  throw new Error('Expected ring to have 2 elements');
+                  console.error('Failed to fetch territories');
                   // return [0, 0];
                 }
               });
