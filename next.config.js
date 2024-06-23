@@ -1,5 +1,8 @@
 // next.config.js
 module.exports = {
+  basePath: '/Kamchatka-Frontend',
+  assetPrefix: '/Kamchatka-Frontend/',
+  trailingSlash: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.alias['@types/node'] = '@types/node';
