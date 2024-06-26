@@ -1,5 +1,10 @@
 // next.config.js
 module.exports = {
+  output: 'export',
+  distDir: 'dist',
+  images: {
+    unoptimized: true,
+  },
   basePath: '/Kamchatka-Frontend',
   assetPrefix: '/Kamchatka-Frontend/',
   trailingSlash: true,
