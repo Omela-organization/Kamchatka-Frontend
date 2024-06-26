@@ -14,7 +14,8 @@
     "predeploy": "npm run build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out",
+    "export": "next export"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^14.2.3",
