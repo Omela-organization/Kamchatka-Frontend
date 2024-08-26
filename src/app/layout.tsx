@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function Home({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <script src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_225d5b721eb157ba2b76833241709999"></script>
       <body className={jost.className}>
         <Navigation />
         {children}
